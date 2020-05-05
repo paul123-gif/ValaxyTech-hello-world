@@ -6,17 +6,11 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <!-- Example for MySQL-->
-                <sonar.jdbc.url>
-                  jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8
-                </sonar.jdbc.url>
-                <sonar.jdbc.username>sonar</sonar.jdbc.username>
-                <sonar.jdbc.password>sonar</sonar.jdbc.password>
-
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                  http://localhost:9000
+                  http://ec2-52-15-215-232.us-east-2.compute.amazonaws.com:9000
                 </sonar.host.url>
+                <sonar.login>43f17eceb5f387709ce38b51e319f1a2ffc07702</sonar.login>
             </properties>
         </profile>
      </profiles>
