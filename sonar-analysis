@@ -8,15 +8,11 @@ pipeline {
                 git url: 'https://github.com/paul123-gif/ValaxyTech-hello-world.git'
             }
         }
-        stage('build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
+        
         stage('sonarscanner') {
             steps {
                   withSonarQubeEnv('sonarqube') {
-                    sh 'mvn sonar:sonar'
+                    sh 'mvn clean package sonar:sonar'
                 }
             
                 }
