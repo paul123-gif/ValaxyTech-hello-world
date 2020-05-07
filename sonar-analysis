@@ -16,19 +16,17 @@ pipeline {
         }
         stage('sonarscanner') {
             steps {
-                script {
-                //prepare sonarqube scanner environment
-                withSonarQubeEnv('sonarqube') {
+                  withSonarQubeEnv('sonarqube') {
                     sh 'mvn sonar:sonar'
                 }
                 
                 
-      stage("Quality Gate") {
+       stage("Quality Gate") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
+                    waitForQualityGate true
                 }
             }
         }
@@ -40,4 +38,3 @@ pipeline {
             }
 
     }
-}
