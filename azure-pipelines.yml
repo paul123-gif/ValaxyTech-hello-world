@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'Tomcat-latest'
+      vmImage: 'Tomcat'
     steps:
     - task: Docker@2
       displayName: Build an image
